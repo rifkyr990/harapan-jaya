@@ -43,7 +43,7 @@ const Navbar = () => {
 
             <header
                 className="w-screen h-screen flex flex-col md:flex-row justify-between items-center px-6 gap-10 max-w-screen-xl mx-auto">
-                {/* TEXT - on the left */}
+                
                 <div className="md:w-1/2 text-left">
                     <h3 className='text-2xl font-extrabold uppercase text-red-600'>kenapa harapan jaya?</h3>
                     <h1 className='text-4xl font-extrabold uppercase text-red-600 max-w-[500px] my-2'>perjalanan nyaman untuk setiap tujuan!</h1>
@@ -59,7 +59,7 @@ const Navbar = () => {
                     </div>
                 </div>
 
-                {/* IMAGE - on the right */}
+                
                 <div className="md:w-1/2 flex justify-center">
                     <Image src="/bus-01.png" alt="Gambar Bus Harapan Jaya" width={550} height={200}
                         className="object-contain" />

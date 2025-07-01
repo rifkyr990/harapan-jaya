@@ -124,3 +124,7 @@
 * {
   font-family: "Poppins", sans-serif;
 }
+.swiper-button-next,
+.swiper-button-prev {
+  display: none;
+}
