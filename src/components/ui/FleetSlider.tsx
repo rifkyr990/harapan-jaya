@@ -12,13 +12,14 @@ import type { Swiper as SwiperType } from 'swiper';
 const FleetSlider: React.FC = () => {
     const [modalImage, setModalImage] = useState<string | null>(null);
     const [activeType, setActiveType] = useState<string>('Eksekutif');
+    
     const swiperRef = useRef<SwiperType | null>(null);
 
     const busTypes = Object.keys(fleetData);
 
     const handleTabClick = (type: string, index: number) => {
         setActiveType(type);
-        swiperRef.current?.slideTo(index); // ⬅️ geser Swiper ke slide yang sesuai
+        swiperRef.current?.slideTo(index);
     };
 
     return (
@@ -43,56 +44,88 @@ const FleetSlider: React.FC = () => {
                 </button>
             ))}
             </div>
-
             {/* Swiper */}
             <Swiper
-            modules={[Autoplay]}
-            autoplay={{ delay: 3000, disableOnInteraction: false }}
-            spaceBetween={40}
-            slidesPerView={1}
-            centeredSlides={true}
-            onSwiper={(swiper) => {
-                swiperRef.current = swiper;
-            }}
-            onSlideChange={(swiper) => {
-                setActiveType(busTypes[swiper.activeIndex]);
-            }}
-            className="w-full"
-            >
+                modules={[Autoplay]}
+                autoplay={{ delay: 3000, disableOnInteraction: false }}
+                speed={700}
+                spaceBetween={40}
+                slidesPerView={1}
+                centeredSlides={true}
+                onSwiper={(swiper) => {
+                    swiperRef.current = swiper;
+                }}
+                onSlideChange={(swiper) => {
+                    setActiveType(busTypes[swiper.activeIndex]);
+                }}
+                className="w-full"
+                >
             {busTypes.map((type) => {
-                const { images, fasilitas } = fleetData[type];
-
+                const { images, fasilitas, jurusan } = fleetData[type];
+                const [activeImage, setActiveImage] = useState(images[0]);
                 return (
                 <SwiperSlide key={type}>
-                    <div className="flex flex-col items-center justify-center w-full">
-                        
-                        {/* Gambar-gambar */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 max-w-6xl">
-                        {images.map((img, idx) => (
-                            <div
-                            key={idx}
-                            className="rounded-lg overflow-hidden shadow-md cursor-pointer"
-                            onClick={() => setModalImage(img)}
-                            >
+                    <div className="flex flex-col lg:flex-row items-start justify-between gap-8 w-full max-w-6xl mx-auto bg-white">
+                        {/* LEFT: Gambar Utama dan Thumbnail */}
+                        <div className="w-full lg:w-1/2">
+                            {/* Gambar utama */}
+                            <div className="rounded-lg overflow-hidden shadow-lg mb-4">
                             <img
-                                src={img}
-                                alt={`${type} ${idx + 1}`}
-                                className="h-auto w-max-6xl object-fit hover:scale-105 transition-transform duration-400 transition-"
+                                src={activeImage}
+                                alt={`${type} utama`}
+                                className="w-full object-cover rounded"
                             />
                             </div>
-                        ))}
+
+                            {/* Thumbnail */}
+                            {images.length > 1 && (
+                            <div className="flex gap-3 flex-wrap">
+                                {images.map((img, idx) => (
+                                <img
+                                    key={idx}
+                                    src={img}
+                                    alt={`${type} ${idx + 1}`}
+                                    className={`w-20 h-14 object-cover rounded cursor-pointer border-2 transition 
+                                    ${img === activeImage ? 'border-blue-600' : 'border-transparent'}
+                                    `}
+                                    onClick={() => setActiveImage(img)}
+                                />
+                                ))}
+                            </div>
+                            )}
                         </div>
 
-                        {/* Fasilitas */}
-                        <h4 className="text-xl font-semibold mb-2 text-gray-700 text-center">Fasilitas:</h4>
-                        <ul className="list-disc pl-6 gap-3 text-gray-600 grid grid-cols-1 sm:grid-cols-2 gap-1 max-w-3xl text-left">
-                        {fasilitas.map((f, i) => (
-                            <li key={i} className='mx-2'>{f}</li>
-                        ))}
-                        </ul>
+                        {/* RIGHT: Fasilitas */}
+                        <div className="w-full lg:w-1/2">
+                            <div className="mb-8">
+                                <h4 className="text-2xl font-semibold text-gray-800 mb-3">Fasilitas</h4>
+                                <hr className="border-gray-300 mb-4" />
+
+                                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                {fasilitas.map((fas, idx) => (
+                                    <li key={idx} className="flex items-center gap-3">
+                                    <img src={fas.icon} alt={fas.nama} className="w-6 h-6 shrink-0" />
+                                    <span className="text-gray-700">{fas.nama}</span>
+                                    </li>
+                                ))}
+                                </ul>
+                            </div>
+
+                            <div className="mb-8">
+                                <h4 className="text-2xl font-semibold text-gray-800 mb-3">Jurusan</h4>
+                                <hr className="border-gray-300 mb-4" />
+
+                                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 list-disc list-inside">
+                                {jurusan.map((jur, idx) => (
+                                    <li key={idx} className="text-gray-700 text-sm">
+                                    {jur}
+                                    </li>
+                                ))}
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </SwiperSlide>
-
                 );
             })}
             </Swiper>
