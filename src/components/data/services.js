@@ -32,27 +32,27 @@ export const services = [{
 
 export const testimoni = [
     {
-        text: "Layanan pembuatan website laundry-nya sangat profesional dan cepat. Sekarang pelanggan kami bisa order langsung dari HP!",
+        text: "Saya sangat terkesan dengan pelayanan Bus Harapan Jaya. Armada yang kami tumpangi bersih, terawat, dan sangat nyaman untuk perjalanan jauh. Sopirnya juga sangat ramah dan mengemudi dengan aman. Ini membuat perjalanan bisnis kami terasa menyenangkan. Sangat direkomendasikan untuk kebutuhan transportasi korporat.",
         name: "Indria Mustika",
         role: "Pemilik Amanah Laundry",
-        photo: "/indria-mustika.jpg",
+        photo: "/images/passenger/indria-mustika.jpg",
     },
     {
-        text: "Sistem ujian online yang dibuat sangat membantu proses belajar kami. Mudah digunakan dan responsif.",
+        text: "Kami menggunakan layanan Harapan Jaya untuk paket wisata rombongan dan hasilnya sangat memuaskan. Mulai dari pemesanan yang mudah, ketepatan waktu keberangkatan, hingga kenyamanan selama perjalanan—semuanya luar biasa. Penumpang kami sangat senang, dan kami pasti akan bekerjasama lagi ke depannya.",
         name: "Salfanisa Azzahra",
         role: "Guru SMP Setya Budi Bekasi",
-        photo: "/istri.png",
+        photo: "/images/passenger/istri.png",
     },
     {
-        text: "Tampilan websitenya elegan dan sesuai dengan brand toko bucket kami. Penjualan online jadi jauh lebih mudah.",
+        text: "Sebagai penyelenggara event, ketepatan waktu adalah segalanya. Bus Harapan Jaya berhasil memenuhi ekspektasi kami dengan armada yang datang tepat waktu, kondisi kendaraan prima, dan staf yang profesional. Layanan seperti ini jarang ditemukan dan sangat kami apresiasi.",
         name: "Wina Septiani",
         role: "Owner Bucklist",
-        photo: "/images.jpg",
+        photo: "/images/passenger/images.jpg",
     },
     {
         text: "Website portofolionya sangat clean dan modern. Sangat cocok untuk mempresentasikan karya saya ke calon klien",
         name: "Wisnu Setiawan",
         role: "Mahasiswa",
-        photo: "/client1.jpg",
+        photo: "/images/passenger/client1.jpg",
     }
 ]

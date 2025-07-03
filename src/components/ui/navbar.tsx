@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 const Navbar = () => {
     return (
-        <div className='overflow-x-hidden'>
+        <section className='overflow-x-hidden'>
             <nav className="fixed left-0 right-0 top-0 w-[calc(100%-2rem)] mt-4 mx-auto px-4 md:px-6 lg:px-12 py-4 flex justify-between items-center bg-white bg-opacity-50 backdrop-blur-lg shadow-sm z-50 max-w-screen-xl rounded-md">
                 <Link href="/">
                     <Image
@@ -24,8 +24,13 @@ const Navbar = () => {
                         </Link>
                     </li>
                     <li>
-                        <Link href="/perusahaan" className="text-gray-700 hover:text-red-600 transition">
-                            Perusahaan
+                        <Link href="/" className="text-gray-700 hover:text-red-600 transition">
+                            Tentang Kami
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/" className="text-gray-700 hover:text-red-600 transition">
+                            Layanan
                         </Link>
                     </li>
                     <li>
@@ -34,8 +39,13 @@ const Navbar = () => {
                         </Link>
                     </li>
                     <li>
+                        <Link href="/" className="text-gray-700 hover:text-red-600 transition">
+                            Hubungi Kami
+                        </Link>
+                    </li>
+                    <li>
                         <Link href="/login">
-                            <Button variant="destructive">Login</Button>
+                            <Button variant="destructive" className='cursor-pointer'>Login</Button>
                         </Link>
                     </li>
                 </ul>
@@ -65,7 +75,7 @@ const Navbar = () => {
                         className="object-contain" />
                 </div>
             </header>
-        </div>
+        </section>
     )
 }
 
