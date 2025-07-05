@@ -1,75 +1,80 @@
-import React from 'react'
+'use client';
+
+import React from 'react';
+import Image from 'next/image';
 import {
     Card,
-    CardAction,
     CardContent,
-    CardDescription,
     CardFooter,
     CardHeader,
-    CardTitle,
-} from "@/components/ui/card"
-import Image from 'next/image'
+} from '@/components/ui/card';
 
-const Blog = () => {
+const articles = [
+    {
+        title: 'Bus Pariwisata & Charter Terbaik untuk Setiap Kebutuhan Anda',
+        image: '/images/artikel.webp',
+        date: '2025-07-03',
+        desc: 'Temukan kenyamanan dan keamanan terbaik dalam setiap perjalanan.',
+    },
+    {
+        title: 'Tips Memilih Bus Pariwisata Berkualitas untuk Liburan Anda',
+        image: '/images/artikel2.jpg',
+        date: '2025-07-03',
+        desc: 'Cara memilih armada bus yang nyaman, aman, dan sesuai kebutuhan.',
+    },
+    {
+        title: 'Mengungkap Sejarah Transportasi Bus di Indonesia',
+        image: '/images/sejarah-bus.webp',
+        date: '2025-07-03',
+        desc: 'Perjalanan panjang bus sebagai moda transportasi utama di Indonesia.',
+    },
+    {
+        title: '5 Destinasi Wisata Populer dengan Layanan Bus Terbaik',
+        image: '/images/artikel2.jpg',
+        date: '2025-07-03',
+        desc: 'Rekomendasi wisata yang bisa dijangkau dengan layanan bus berkualitas.',
+    },
+    ];
+
+    const Blog = () => {
     return (
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-            <div className="max-w-xl mx-auto text-center">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Artikel</h2>
-                <p className="text-gray-600 text-lg mb-10">Ulasan & Pengalaman Penumpang Kami</p>
-            </div>
+        <div className="max-w-xl mx-auto text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Artikel</h2>
+            <p className="text-gray-600 text-lg">Ulasan & Pengalaman Penumpang Kami</p>
+        </div>
 
-            <div className="max-w-7xl mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center">
-                <Card className="w-full max-w-[350px] pt-0">
-                    <CardHeader className='p-0'>
-                        <Image src="/images/artikel.webp" alt="bus" width={450} height={450} className='rounded-t-md' />
-                    </CardHeader>
-                    <CardContent>
-                        <h2 className="text-xl font-bold my-3">Bus Pariwisata & Charter Terbaik untuk Setiap Kebutuhan Anda</h2>
-                        <p className="text-gray-600">Temukan kenyamanan dan keamanan terbaik dalam setiap perjalanan</p>
-                    </CardContent>
-                    <CardFooter>
-                        <p className="text-gray-400">2025-07-03</p>
-                    </CardFooter>
-                </Card>
-                <Card className="w-full max-w-[350px] pt-0">
-                    <CardHeader className='p-0'>
-                        <Image src="/images/artikel2.jpg" alt="bus" width={450} height={450} className='rounded-t-md' />
-                    </CardHeader>
-                    <CardContent>
-                        <h2 className="text-xl font-bold my-3">Bus Pariwisata & Charter Terbaik untuk Setiap Kebutuhan Anda</h2>
-                        <p className="text-gray-600">Temukan kenyamanan dan keamanan terbaik dalam setiap perjalanan</p>
-                    </CardContent>
-                    <CardFooter>
-                        <p className="text-gray-400">2025-07-03</p>
-                    </CardFooter>
-                </Card>
-                <Card className="w-full max-w-[350px] pt-0">
-                    <CardHeader className='p-0'>
-                        <Image src="/images/artikel2.jpg" alt="bus" width={400} height={400} className='rounded-t-md' />
-                    </CardHeader>
-                    <CardContent>
-                        <h2 className="text-xl font-bold my-3">Bus Pariwisata & Charter Terbaik untuk Setiap Kebutuhan Anda</h2>
-                        <p className="text-gray-600">Temukan kenyamanan dan keamanan terbaik dalam setiap perjalanan</p>
-                    </CardContent>
-                    <CardFooter>
-                        <p className="text-gray-400">2025-07-03</p>
-                    </CardFooter>
-                </Card>
-                <Card className="w-full max-w-[350px] pt-0">
-                    <CardHeader className='p-0'>
-                        <Image src="/images/sejarah-bus.webp" alt="bus" width={450} height={450} className='rounded-t-md' />
-                    </CardHeader>
-                    <CardContent>
-                        <h2 className="text-xl font-bold my-3">Bus Pariwisata & Charter Terbaik untuk Setiap Kebutuhan Anda</h2>
-                        <p className="text-gray-600">Temukan kenyamanan dan keamanan terbaik dalam setiap perjalanan</p>
-                    </CardContent>
-                    <CardFooter>
-                        <p className="text-gray-400">2025-07-03</p>
-                    </CardFooter>
-                </Card>
-            </div>
+        <div className="max-w-7xl mx-auto grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {articles.map((item, idx) => (
+            <Card
+                key={idx}
+                className="w-full max-w-full transition-shadow duration-300 hover:shadow-lg cursor-pointer"
+            >
+                <CardHeader className="p-0">
+                <Image
+                    src={item.image}
+                    alt={item.title}
+                    width={450}
+                    height={300}
+                    className="rounded-t-md object-cover h-56 w-full"
+                />
+                </CardHeader>
+
+                <CardContent>
+                <h3 className="text-lg font-semibold my-3 line-clamp-2">
+                    {item.title}
+                </h3>
+                <p className="text-sm text-gray-600 line-clamp-2">{item.desc}</p>
+                </CardContent>
+
+                <CardFooter>
+                <p className="text-xs text-gray-400">{item.date}</p>
+                </CardFooter>
+            </Card>
+            ))}
+        </div>
         </section>
-    )
-}
+    );
+};
 
-export default Blog
+export default Blog;

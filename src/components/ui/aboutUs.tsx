@@ -2,6 +2,7 @@
 import React from 'react'
 import CountUp from 'react-countup'
 import { useInView } from 'react-intersection-observer'
+import Image from 'next/image'
 
 const AboutUs = () => {
     const [ref, inView] = useInView({
@@ -13,7 +14,7 @@ const AboutUs = () => {
             <section className="bg-white py-16 px-6 md:px-20" id="about" ref={ref}>
                 <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
                     <div className="w-full">
-                        <img src="/about.jpg" alt="Bus Company"
+                        <Image src="/about.jpg" alt="Bus Company"
                             className="rounded-lg shadow-lg w-full object-cover" />
                     </div>
 

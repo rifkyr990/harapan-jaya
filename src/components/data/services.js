@@ -32,19 +32,19 @@ export const services = [{
 
 export const testimoni = [
     {
-        text: "Saya sangat terkesan dengan pelayanan Bus Harapan Jaya. Armada yang kami tumpangi bersih, terawat, dan sangat nyaman untuk perjalanan jauh. Sopirnya juga sangat ramah dan mengemudi dengan aman. Ini membuat perjalanan bisnis kami terasa menyenangkan. Sangat direkomendasikan untuk kebutuhan transportasi korporat.",
+        text: "Saya sangat terkesan dengan pelayanan Bus Harapan Jaya. Armada yang kami tumpangi bersih, terawat, dan sangat nyaman untuk perjalanan jauh. ",
         name: "Indria Mustika",
         role: "Pemilik Amanah Laundry",
         photo: "/images/passenger/indria-mustika.jpg",
     },
     {
-        text: "Kami menggunakan layanan Harapan Jaya untuk paket wisata rombongan dan hasilnya sangat memuaskan. Mulai dari pemesanan yang mudah, ketepatan waktu keberangkatan, hingga kenyamanan selama perjalanan—semuanya luar biasa. Penumpang kami sangat senang, dan kami pasti akan bekerjasama lagi ke depannya.",
+        text: "Kami menggunakan layanan Harapan Jaya untuk paket wisata rombongan dan hasilnya sangat memuaskan. ",
         name: "Salfanisa Azzahra",
         role: "Guru SMP Setya Budi Bekasi",
         photo: "/images/passenger/istri.png",
     },
     {
-        text: "Sebagai penyelenggara event, ketepatan waktu adalah segalanya. Bus Harapan Jaya berhasil memenuhi ekspektasi kami dengan armada yang datang tepat waktu, kondisi kendaraan prima, dan staf yang profesional. Layanan seperti ini jarang ditemukan dan sangat kami apresiasi.",
+        text: "Sebagai penyelenggara event, ketepatan waktu adalah segalanya. Bus Harapan Jaya berhasil memenuhi ekspektasi kami dengan armada yang datang tepat waktu.",
         name: "Wina Septiani",
         role: "Owner Bucklist",
         photo: "/images/passenger/images.jpg",
