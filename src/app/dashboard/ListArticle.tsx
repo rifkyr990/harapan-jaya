@@ -8,6 +8,7 @@ const dummyArticles = [
 ];
 
 const ListArticle = () => {
+  
   return (
     <main className="ml-0 md:ml-64 p-6 bg-gray-100 min-h-screen">
       <div className="overflow-x-auto rounded-lg shadow">

@@ -83,7 +83,7 @@ const EditArticleDialog: React.FC<Props> = ({ articleId, open, onClose, onUpdate
                     </div>
                     <div>
                         <label className="block text-sm text-gray-700 mb-1">Thumbnail</label>
-                        <input type="text" name="title" value={formData.thumbnail} onChange={handleChange}
+                        <input type="text" name="thumbnail" value={formData.thumbnail} onChange={handleChange}
                         placeholder="e.g : https://image.com/gambar.png" className="w-full p-2 border border-gray-300 rounded" required />
                     </div>
                     <div>

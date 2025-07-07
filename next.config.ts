@@ -1,3 +1,4 @@
+// next.config.js
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
@@ -5,12 +6,11 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "www.busharapanjaya.com",
-        pathname: "/file/20200714163108.png", // cocokkan path ke gambarnya
+        hostname: "imguh.com", // ← Bukan www.imguh.com
+        pathname: "/images/**",
       },
     ],
   },
 };
-
 
 export default nextConfig;

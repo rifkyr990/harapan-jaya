@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import ReduxProvider from "./ReduxProvider"
+import AuthLoader from "@/components/AuthLoader";
 
 // Import Poppins
 const poppins = Poppins({
@@ -26,7 +28,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.variable} antialiased overflow-x-hidden`}>
-        {children}
+        <ReduxProvider>
+          <AuthLoader/>
+          {children}
+        </ReduxProvider>
       </body>
     </html>
   );

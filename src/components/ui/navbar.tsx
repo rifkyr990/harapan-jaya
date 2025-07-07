@@ -6,16 +6,20 @@ import { Button } from './button'
 import Image from 'next/image'
 import { ArrowRight, Menu, X } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { useAppDispatch, useAppSelector } from '@/lib/redux/hooks'
+import { setSignOut } from '@/lib/redux/features/userSlice'
 
 const Navbar = () => {
-    const [menuOpen, setMenuOpen] = useState(false)
+    const [menuOpen, setMenuOpen] = useState(false);
+    const user = useAppSelector((state) => state.userReducer.email);
+    const dispatch = useAppDispatch();
 
     return (
         <section className='overflow-x-hidden'>
             <nav className="fixed left-0 right-0 top-0 w-[calc(100%-2rem)] mt-4 mx-auto px-4 md:px-6 lg:px-12 py-4 flex justify-between items-center bg-white bg-opacity-70 backdrop-blur-md shadow-md z-50 max-w-screen-xl rounded-xl border border-gray-200">
                 <Link href="/">
                     <Image
-                        src="https://www.busharapanjaya.com/file/20200714163108.png"
+                        src="/images/navbar.png"
                         alt="Logo Bus Harapan Jaya"
                         width={120}
                         height={120}
@@ -30,7 +34,7 @@ const Navbar = () => {
                         {menuOpen ? <X size={28} /> : <Menu size={28} />}
                     </button>
                 </div>
-
+                
                 {/* Menu List */}
                 <ul className={`absolute md:static top-full left-0 w-full md:w-auto bg-white md:bg-transparent shadow-md md:shadow-none border-t md:border-none px-6 py-4 md:p-0 flex flex-col md:flex-row gap-4 md:gap-6 items-start md:items-center text-sm md:text-base font-medium transition-all duration-300 ease-in-out z-40 ${menuOpen ? 'flex' : 'hidden'} md:flex`}>
                     <li>
@@ -49,9 +53,17 @@ const Navbar = () => {
                         <Link href="#contact" className="text-gray-700 hover:text-red-600 transition-colors duration-300" onClick={() => setMenuOpen(false)}>Hubungi Kami</Link>
                     </li>
                     <li>
-                        <Link href="/auth/login" onClick={() => setMenuOpen(false)}>
-                            <Button variant="destructive" className="cursor-pointer px-4 py-2 text-sm hover:scale-105 transition-transform duration-300 w-full md:w-auto">Login</Button>
-                        </Link>
+                        {user ? (
+                            <>
+                                <Button variant="destructive" onClick={() => dispatch(setSignOut())}>Log Out</Button>
+                            </>
+                        ) : 
+                        <>
+                            <Link href="/auth/login" onClick={() => setMenuOpen(false)}>
+                                <Button variant="destructive" className="px-4 py-2 text-sm hover:scale-105 transition-transform duration-300 w-full md:w-auto">Login</Button>
+                            </Link>
+                        </>
+                        }
                     </li>
                 </ul>
             </nav>
