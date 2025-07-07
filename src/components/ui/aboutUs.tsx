@@ -15,7 +15,7 @@ const AboutUs = () => {
                 <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
                     <div className="w-full">
                         <Image src="/about.jpg" alt="Bus Company"
-                            className="rounded-lg shadow-lg w-full object-cover" />
+                            className="rounded-lg shadow-lg w-full object-cover" width={100} height={100} />
                     </div>
 
                     <div>

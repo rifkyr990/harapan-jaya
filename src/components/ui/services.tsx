@@ -4,7 +4,7 @@ import Image from 'next/image.js';
 
 const Services = () => {
     return (
-        <section className="py-16 bg-gray-50">
+        <section id='services' className="py-16 bg-gray-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 className="text-4xl font-extrabold text-center text-gray-800 mb-6">
                     Layanan Kami
@@ -24,6 +24,8 @@ const Services = () => {
                                     src={service.images}
                                     alt={service.title}
                                     className="h-56 w-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+                                    width={424}
+                                    height={324}
                                 />
                             </div>
                             <div className="p-6">

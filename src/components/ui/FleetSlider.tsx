@@ -91,6 +91,8 @@ const FleetSlider: React.FC = () => {
                             alt={`${type} utama`}
                             className="w-full h-64 object-cover rounded"
                             onClick={() => setModalImage(activeImage)}
+                            width={424}
+                            height={324}
                         />
                         </div>
 
@@ -100,6 +102,8 @@ const FleetSlider: React.FC = () => {
                             <Image
                                 key={idx}
                                 src={img}
+                                width={324}
+                                height={224}
                                 alt={`${type} ${idx + 1}`}
                                 className={`w-20 h-14 object-cover rounded border-2 cursor-pointer transition duration-200 ${
                                     img === activeImage
@@ -130,6 +134,8 @@ const FleetSlider: React.FC = () => {
                                 <Image
                                 src={fas.icon}
                                 alt={fas.nama}
+                                width={20}
+                                height={20}
                                 className="w-6 h-6 shrink-0"
                                 />
                                 <span className="text-gray-700 text-sm">
@@ -168,6 +174,8 @@ const FleetSlider: React.FC = () => {
                 src={modalImage}
                 alt="Zoomed"
                 className="max-w-3xl max-h-[90vh] rounded shadow-lg border-4 border-white transition-transform"
+                width={100}
+                height={100}
             />
             </div>
         )}
