@@ -1,9 +1,6 @@
 'use client';
-import React, { useState } from 'react';
 
 const Sidebar = () => {
-  const [open, setOpen] = useState(false);
-
   return (
     <>
     <aside className="w-64 bg-white shadow-md p-6 hidden md:block">

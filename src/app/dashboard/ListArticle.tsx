@@ -21,7 +21,7 @@ const ListArticle = () => {
             </tr>
           </thead>
           <tbody>
-            {dummyArticles.map((article, idx) => (
+            {dummyArticles.map((article) => (
               <tr
                 key={article.id}
                 className="hover:bg-blue-50 transition-colors duration-150"

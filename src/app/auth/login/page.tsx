@@ -25,17 +25,17 @@ const Login = () => {
 
             if (!user || user.email !== ADMIN_EMAIL.toLowerCase()) {
                 alert('AKSES DILARANG, HANYA ADMIN');
-            } else {
-                localStorage.setItem('user', JSON.stringify(user))
-                Router.push('/dashboard');
-            }
+            } 
+            localStorage.setItem('user', JSON.stringify(user))
+            Router.push('/dashboard');
 
         } catch (error) {
             console.error('login ERROR', error);
             alert('Terjadi kesalahan saat login');
         }
     }
-  return (
+
+    return (
     <div>
         <section className='relative bg-[url(/images/bg-img.jpg)] bg-cover bg-center bg-no-repeat'>
         <div className="absolute inset-0 bg-black/70 z-0"></div>

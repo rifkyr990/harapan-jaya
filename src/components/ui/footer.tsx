@@ -41,7 +41,7 @@ const Footer = () => {
 
                 {/* Hak Cipta */}
                 <div className="text-right text-sm text-gray-400 md:text-right">
-                    <p>© {year} PT. Harapan Jaya Prima.</p>
+                    <p>© {year} PT. Harapan Jaya Prima  .</p>
                     <p>All rights reserved.</p>
                 </div>
             </div>
