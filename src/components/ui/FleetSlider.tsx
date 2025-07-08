@@ -9,6 +9,8 @@ import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
 import type { Swiper as SwiperType } from 'swiper';
 import Image from 'next/image';
+import { Button } from './button';
+import { useRouter } from 'next/navigation';
 
 type FleetKey = keyof typeof fleetData;
 
@@ -27,6 +29,7 @@ const FleetSlider: React.FC = () => {
 
     const swiperRef = useRef<SwiperType | null>(null);
     const busTypes = Object.keys(fleetData);
+    const Router = useRouter();
 
     const handleTabClick = (type: string, index: number) => {
         setActiveType(type);
@@ -60,21 +63,20 @@ const FleetSlider: React.FC = () => {
             ))}
             </div>
 
-            {/* Swiper */}
             <Swiper
-            modules={[Autoplay]}
-            autoplay={{ delay: 4000, disableOnInteraction: false }}
-            speed={700}
-            spaceBetween={40}
-            slidesPerView={1}
-            centeredSlides
-            onSwiper={(swiper) => {
-                swiperRef.current = swiper;
-            }}
-            onSlideChange={(swiper) => {
-                setActiveType(busTypes[swiper.activeIndex]);
-            }}
-            className="w-full"
+                modules={[Autoplay]}
+                autoplay={{ delay: 4000, disableOnInteraction: false }}
+                speed={700}
+                spaceBetween={40}
+                slidesPerView={1}
+                centeredSlides
+                onSwiper={(swiper) => {
+                    swiperRef.current = swiper;
+                }}
+                onSlideChange={(swiper) => {
+                    setActiveType(busTypes[swiper.activeIndex]);
+                }}
+                className="w-full"
             >
             {busTypes.map((type) => {
                 const { images, fasilitas, jurusan } = fleetData[type];
@@ -83,7 +85,6 @@ const FleetSlider: React.FC = () => {
                 return (
                 <SwiperSlide key={type}>
                     <div className="flex flex-col lg:flex-row items-start justify-between gap-8 max-w-6xl mx-auto bg-white p-6 rounded-lg shadow-md">
-                    {/* LEFT: Gambar & Thumbnail */}
                     <div className="w-full lg:w-1/2">
                         <div className="rounded-lg overflow-hidden shadow mb-4 cursor-zoom-in">
                         <Image
@@ -122,7 +123,6 @@ const FleetSlider: React.FC = () => {
                         )}
                     </div>
 
-                    {/* RIGHT: Info Fasilitas & Jurusan */}
                     <div className="w-full lg:w-1/2">
                         <div className="mb-8">
                         <h4 className="text-2xl font-semibold text-gray-800 mb-3">
@@ -163,6 +163,9 @@ const FleetSlider: React.FC = () => {
             })}
             </Swiper>
         </div>
+        <div className="flex justify-center items-center">
+            <Button onClick={() => Router.push('/agen')} className='p-6 bg-red-600 text-white shadow hover:bg-white hover:text-red-600 cursor-pointer'>Lihat daftar agen</Button>
+        </div>
 
         {/* Modal Zoom Gambar */}
         {modalImage && (
@@ -179,6 +182,7 @@ const FleetSlider: React.FC = () => {
             />
             </div>
         )}
+
         </section>
     );
 };

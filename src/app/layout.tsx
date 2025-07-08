@@ -4,7 +4,6 @@ import "./globals.css";
 import ReduxProvider from "./ReduxProvider"
 import AuthLoader from "@/components/AuthLoader";
 
-// Import Poppins
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
@@ -26,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html className="scroll-smooth">
       <body className={`${poppins.variable} antialiased overflow-x-hidden`}>
         <ReduxProvider>
           <AuthLoader/>

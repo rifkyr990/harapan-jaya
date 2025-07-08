@@ -35,24 +35,24 @@ const AboutUs = () => {
                         <div className="grid grid-cols-2 gap-6 mt-8">
                             <div>
                                 <p className="text-3xl font-bold text-red-600">
-                                    {inView && <CountUp end={20} duration={2} />}+</p>
+                                    <span>{inView && <CountUp end={20} duration={2} />}</span>+</p>
                                 <p className="text-gray-700">Tahun Pengalaman</p>
                             </div>
                             <div>
                                 <p className="text-3xl font-bold text-red-600">
-                                    {inView && <CountUp end={50} duration={2} />}+
+                                    <span>{inView && <CountUp end={50} duration={2} />}</span>+
                                 </p>
                                 <p className="text-gray-700">Rute AKAP</p>
                             </div>
                             <div>
                                 <p className="text-3xl font-bold text-red-600">
-                                    {inView && <CountUp end={200} duration={2} />}+
+                                    <span>{inView && <CountUp end={200} duration={2} />}</span>+
                                 </p>
                                 <p className="text-gray-700">Unit Armada</p>
                             </div>
                             <div>
                                 <p className="text-3xl font-bold text-red-600">
-                                    {inView && <CountUp end={1} duration={2} />}M+
+                                    <span>{inView && <CountUp end={1} duration={2} />}</span>M+
                                 </p>
                                 <p className="text-gray-700">Penumpang Terlayani</p>
                             </div>

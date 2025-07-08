@@ -11,6 +11,8 @@ import {
 import { Button } from './button';
 import { callAPI } from '@/api/myAPI';
 import { useEffect, useState } from 'react';
+import slugify from "slugify";
+import { useRouter } from 'next/navigation';
 
 interface Article {
     objectId ?: string;
@@ -23,6 +25,7 @@ interface Article {
 
 const Blog = () => {
     const [articles, setArticles] = useState<Article[]>([]);
+    const Router = useRouter();
 
     const fetchArticles = async () => {
         try {
@@ -60,7 +63,8 @@ const Blog = () => {
                             </CardHeader>
 
                             <CardContent>
-                                <h3 className="text-lg font-semibold my-3 line-clamp-2">
+                                <h3 className="text-lg font-semibold my-3 line-clamp-2"
+                                onClick={() => Router.push(`/blog/${slugify(article.title, { lower: true })}`)}>
                                     {article.title}
                                 </h3>
                                 <p className="text-sm text-gray-600 line-clamp-2">{article.content}</p>
