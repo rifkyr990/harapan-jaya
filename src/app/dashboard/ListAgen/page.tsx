@@ -93,7 +93,7 @@ interface Agen {
 
         return (
             <ProtectedRoute>
-                <div className="min-h-screen bg-gray-100 flex">
+                <div className="min-h-screen bg-gray-100 flex flex-col md:flex-row">
                     <Sidebar/>
                     <main className="flex-1 p-4 sm:p-6">
                         <Header />
