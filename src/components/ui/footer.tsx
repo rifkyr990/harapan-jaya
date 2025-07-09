@@ -10,7 +10,7 @@ const Footer = () => {
     const year = new Date().getFullYear();
 
     return (
-        <footer className="bg-white py-10 px-6 md:px-16">
+        <footer className="py-10 px-6 md:px-16">
             <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
                 {/* Navigasi Cepat */}
                 <div>
@@ -27,14 +27,14 @@ const Footer = () => {
                 <div className="text-center">
                     <h4 className="text-xl font-semibold mb-4">Ikuti Kami</h4>
                     <div className="flex justify-center space-x-5 text-2xl">
-                        <a href="https://instagram.com" target="_blank" rel="noreferrer"
+                        <a href="https://www.instagram.com/busharapanjaya.official/" target="_blank" rel="noreferrer"
                             className="hover:text-pink-500">
                             <FaInstagram /></a>
-                        <a href="https://tiktok.com" target="_blank" rel="noreferrer" className="hover:text-gray-300">
+                        <a href="https://www.tiktok.com/@ptharapanjayaprima?lang=id-ID" target="_blank" rel="noreferrer" className="hover:text-gray-300">
                             <FaTiktok /></a>
-                        <a href="https://facebook.com" target="_blank" rel="noreferrer" className="hover:text-blue-600">
+                        <a href="https://web.facebook.com/Ptharapanjayaprima/?_rdc=1&_rdr#" target="_blank" rel="noreferrer" className="hover:text-blue-600">
                             <FaFacebook /></a>
-                        <a href="https://youtube.com" target="_blank" rel="noreferrer" className="hover:text-red-600">
+                        <a href="https://www.youtube.com/@BusHarapanJayaOfficial" target="_blank" rel="noreferrer" className="hover:text-red-600">
                             <FaYoutube /></a>
                     </div>
                 </div>
