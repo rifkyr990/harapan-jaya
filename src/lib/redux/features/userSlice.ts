@@ -17,7 +17,6 @@ const userSlice = createSlice({
   reducers: {
     setSignIn: (initialState, action) => {
       console.log("CHECK ACTION REDUX FROM USER SIGNIN:", action);
-      // Store data to global store user reducer
       return action.payload;
     },
     setSignOut: () => {

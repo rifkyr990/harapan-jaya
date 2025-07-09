@@ -94,116 +94,148 @@ interface Agen {
         return (
             <ProtectedRoute>
                 <div className="min-h-screen bg-gray-100 flex">
-                <Sidebar/>
-                <main className="flex-1 p-6">
-                    <Header/>
-                    <div className="bg-white p-6 rounded-lg shadow mb-8">
-                        <h3 className="text-lg font-semibold text-gray-800 mb-4">Tambah Agen</h3>
+                    <Sidebar/>
+                    <main className="flex-1 p-4 sm:p-6">
+                        <Header />
+                        <section className="bg-white p-4 sm:p-6 rounded-lg shadow mb-8">
+                            <h3 className="text-lg font-semibold text-gray-800 mb-4">Tambah Agen</h3>
                             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-                                <div className="flex flex-col md:flex-row md:gap-4">
-                                    <div className="flex-1">
-                                        <label className="block text-sm text-gray-700 mb-1">Kota</label>
-                                        <input type="text" name="kota" value={formData.kota} onChange={handleChange}
-                                            placeholder="Masukan Kota" className="w-full p-2 border border-gray-300 rounded" required />
-                                    </div> 
-                                    <div className="flex-1 mt-4 md:mt-0">
-                                        <label className="block text-sm text-gray-700 mb-1">Wilayah</label>
-                                            <select
-                                                name="wilayah"
-                                                id="wilayah"
-                                                value={formData.wilayah}
-                                                onChange={handleChange}
-                                                className="w-full p-2 border border-gray-300 rounded"
-                                            >
-                                                <option value="">=== Pilih wilayah ===</option>
-                                                {WILAYAH_OPTION.map((val) => (
-                                                    <option key={val} value={val}>
-                                                        {val}
-                                                    </option>
-                                                ))}
-                                            </select>
-                                        </div>    
-                                    </div>
-                                <div>
-                                    <label className="block text-sm text-gray-700 mb-1">Nomor Telepon</label>
-                                    <input type="number" value={formData.nomor} onChange={handleChange} name="nomor" id="nomor" placeholder='e.g : 62877535271877' className="w-full p-2 border border-gray-300 rounded resize-none" required/>
+                            
+                            {/* Kota dan Wilayah */}
+                            <div className="flex flex-col md:flex-row gap-4">
+                                <div className="flex-1">
+                                <label className="block text-sm text-gray-700 mb-1">Kota</label>
+                                <input
+                                    type="text"
+                                    name="kota"
+                                    value={formData.kota}
+                                    onChange={handleChange}
+                                    placeholder="Masukkan Kota"
+                                    className="w-full p-2 border border-gray-300 rounded"
+                                    required
+                                />
                                 </div>
-                                <div>
-                                    <label className="block text-sm text-gray-700 mb-1">Alamat</label>
-                                    <textarea name="alamat" value={formData.alamat} onChange={handleChange}
-                                        placeholder="Alamat lengkap" rows={4}
-                                        className="w-full p-2 border border-gray-300 rounded resize-none" required />
+                                <div className="flex-1">
+                                <label className="block text-sm text-gray-700 mb-1">Wilayah</label>
+                                <select
+                                    name="wilayah"
+                                    id="wilayah"
+                                    value={formData.wilayah}
+                                    onChange={handleChange}
+                                    className="w-full p-2 border border-gray-300 rounded"
+                                >
+                                    <option value="">=== Pilih wilayah ===</option>
+                                    {WILAYAH_OPTION.map((val) => (
+                                    <option key={val} value={val}>
+                                        {val}
+                                    </option>
+                                    ))}
+                                </select>
                                 </div>
+                            </div>
 
-                                <div className="flex justify-end">
-                                    <button
-                                        type="submit"
-                                        className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition"
-                                            >
-                                        Tambah
-                                    </button>
-                                </div>
+                            {/* Nomor Telepon */}
+                            <div>
+                                <label className="block text-sm text-gray-700 mb-1">Nomor Telepon</label>
+                                <input
+                                type="number"
+                                value={formData.nomor}
+                                onChange={handleChange}
+                                name="nomor"
+                                id="nomor"
+                                placeholder="e.g : 62877535271877"
+                                className="w-full p-2 border border-gray-300 rounded"
+                                required
+                                />
+                            </div>
+
+                            {/* Alamat */}
+                            <div>
+                                <label className="block text-sm text-gray-700 mb-1">Alamat</label>
+                                <textarea
+                                name="alamat"
+                                value={formData.alamat}
+                                onChange={handleChange}
+                                placeholder="Alamat lengkap"
+                                rows={4}
+                                className="w-full p-2 border border-gray-300 rounded resize-none"
+                                required
+                                />
+                            </div>
+
+                            {/* Tombol Submit */}
+                            <div className="flex justify-end">
+                                <button
+                                type="submit"
+                                className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition"
+                                >
+                                Tambah
+                                </button>
+                            </div>
                             </form>
-                        </div>
-                        <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-                            <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                            <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        </section>
+                        <section className="relative overflow-x-auto shadow-md sm:rounded-lg">
+                            <table className="w-full text-sm text-left text-gray-500">
+                            <thead className="text-xs text-gray-700 uppercase bg-gray-50">
                                 <tr>
-                                <th scope="col" className="px-6 py-3">Kota</th>
-                                <th scope="col" className="px-6 py-3">Alamat</th>
-                                <th scope="col" className="px-6 py-3">Wilayah</th>
-                                <th scope="col" className="px-6 py-3">Nomor</th>
-                                <th scope="col" className="px-6 py-3">Aksi</th>
+                                <th className="px-4 py-3">Kota</th>
+                                <th className="px-4 py-3">Alamat</th>
+                                <th className="px-4 py-3">Wilayah</th>
+                                <th className="px-4 py-3">Nomor</th>
+                                <th className="px-4 py-3">Aksi</th>
                                 </tr>
                             </thead>
-                                <tbody>
-                                    <tr>
-                                    <td colSpan={5}>
-                                        <div className="max-h-[300px] overflow-y-auto">
-                                            <table className="w-full">
-                                                <tbody>
-                                                    {agen.map((data) => (
-                                                        <tr key={data.objectId} className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700 border-gray-200">
-                                                        <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                            {data.kota}
-                                                        </th>
-                                                        <td className="px-6 py-4 max-w-[170px] truncate overflow-hidden whitespace-nowrap">{data.alamat}</td>
-                                                        <td className="px-6 py-4 ">
-                                                            {data.wilayah}
-                                                        </td>
-                                                        <td className="px-6 py-4">{data.nomor}</td>
-                                                        <td className="px-6 py-4">
-                                                            <Button
-                                                                className="font-medium bg-blue-600 hover:underline mx-2 cursor-pointer"
-                                                                onClick={() => handleEditClick(data.objectId!)}
-                                                            >
-                                                            Edit
-                                                            </Button>
-                                                            <Button
-                                                                className="font-medium bg-red-600 hover:bg-blue-500 cursor-pointer"
-                                                                onClick={() => handleDelete(data.objectId!)}
-                                                            >
-                                                            Delete
-                                                            </Button>
-                                                        </td>
-                                                        </tr>
-                                                    ))}
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </td>
+                            <tbody>
+                                <tr>
+                                <td colSpan={5}>
+                                    <div className="max-h-[300px] overflow-y-auto">
+                                    <table className="w-full">
+                                        <tbody>
+                                        {agen.map((data) => (
+                                            <tr
+                                            key={data.objectId}
+                                            className="odd:bg-white even:bg-gray-50 border-b border-gray-200"
+                                            >
+                                            <th className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap max-w-[100px] truncate">
+                                                {data.kota}
+                                            </th>
+                                            <td className="px-4 py-2 max-w-[150px] truncate">{data.alamat}</td>
+                                            <td className="px-4 py-2">{data.wilayah}</td>
+                                            <td className="px-4 py-2">{data.nomor}</td>
+                                            <td className="px-4 py-2 flex flex-col sm:flex-row gap-2">
+                                                <Button
+                                                className="bg-blue-600 text-white px-3 py-1 rounded"
+                                                onClick={() => handleEditClick(data.objectId!)}
+                                                >
+                                                Edit
+                                                </Button>
+                                                <Button
+                                                className="bg-red-600 text-white px-3 py-1 rounded"
+                                                onClick={() => handleDelete(data.objectId!)}
+                                                >
+                                                Delete
+                                                </Button>
+                                            </td>
+                                            </tr>
+                                        ))}
+                                        </tbody>
+                                    </table>
+                                    </div>
+                                </td>
                                 </tr>
                             </tbody>
+
+                            {/* Edit Dialog */}
                             <EditAgenDialog
                                 agenId={selected}
                                 open={isEdit}
                                 onClose={handleCloseEdit}
                                 onUpdated={handleUpdate}
                             />
-                        </table>
-                    </div>
-                </main>
-            </div>
+                            </table>
+                        </section>
+                    </main>
+                </div>
             </ProtectedRoute>
         )
     }

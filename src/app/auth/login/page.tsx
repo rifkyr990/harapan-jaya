@@ -36,8 +36,7 @@ const Login = () => {
         // Simpan ke Redux
         dispatch(setSignIn(user));
 
-        // Redirect ke dashboard
-        router.push('/dashboard');
+        router.push('/dashboard/ListArticle/');
         } catch (error) {
         console.error('Login ERROR', error);
         alert('Terjadi kesalahan saat login');
@@ -45,53 +44,52 @@ const Login = () => {
     };
 
     return (
-        <div>
-        <section className="relative bg-[url(/images/bg-img.jpg)] bg-cover bg-center bg-no-repeat">
+        <section className="relative bg-[url(/images/bg-img.jpg)] bg-cover bg-center bg-no-repeat min-h-screen">
             <div className="absolute inset-0 bg-black/70 z-0"></div>
-            <div className="relative w-screen h-screen flex justify-center items-center z-10">
-            <Card>
-                <CardContent className="flex justify-center w-lg flex-col">
-                <h1 className="text-center text-4xl font-extrabold my-5">Masuk</h1>
+            <div className="relative w-full min-h-screen flex justify-center items-center p-4 sm:p-6 z-10">
+                <Card className="w-full max-w-md sm:max-w-lg">
+                <CardContent className="flex justify-center flex-col">
+                    <h1 className="text-center text-3xl sm:text-4xl font-extrabold my-5">Masuk</h1>
 
-                <div className="my-4">
-                    <label htmlFor="email">Email :</label>
+                    <div className="my-4">
+                    <label htmlFor="email" className="block mb-1 text-sm">Email :</label>
                     <Input
-                    id="email"
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="name@domain.com"
-                    required
+                        id="email"
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="name@domain.com"
+                        required
                     />
-                </div>
+                    </div>
 
-                <div className="my-4">
-                    <label htmlFor="password">Password :</label>
+                    <div className="my-4">
+                    <label htmlFor="password" className="block mb-1 text-sm">Password :</label>
                     <Input
-                    id="password"
-                    type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    placeholder="******"
-                    required
+                        id="password"
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        placeholder="******"
+                        required
                     />
-                </div>
+                    </div>
 
-                <Button className="my-4 bg-red-600" onClick={login}>
+                    <Button className="my-4 bg-red-600 text-white" onClick={login}>
                     Masuk
-                </Button>
+                    </Button>
 
-                <span className="text-center my-3">
+                    <span className="text-center my-3 text-sm">
                     Belum memiliki akun?{' '}
-                    <a href="/signup" className="text-red-600">
-                    Daftar
+                    <a href="/signup" className="text-red-600 underline">
+                        Daftar
                     </a>
-                </span>
+                    </span>
                 </CardContent>
-            </Card>
+                </Card>
             </div>
         </section>
-        </div>
+
     );
 };
 
