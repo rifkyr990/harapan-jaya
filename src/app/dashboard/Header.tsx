@@ -35,8 +35,8 @@ const Header = () => {
       {isOpen && (
         <div className="sm:hidden mt-2 flex flex-col gap-2 bg-white border rounded shadow-md w-full p-4 text-gray-800 z-10">
           <Link href="/" className="hover:text-blue-500">Beranda</Link>
-          <Link href="/ListAgen/" className="hover:text-blue-500">Daftar Agen</Link>
-          <Link href="/ListArticle/" className="hover:text-blue-500">Daftar Artikel</Link>
+          <Link href="/dashboard/ListAgen/" className="hover:text-blue-500">Daftar Agen</Link>
+          <Link href="/dashboard/ListArticle/" className="hover:text-blue-500">Daftar Artikel</Link>
           <button
               onClick={() => {
                 dispatch(setSignOut());
