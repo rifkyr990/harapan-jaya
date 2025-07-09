@@ -71,7 +71,7 @@ const Blog = () => {
                             </CardContent>
 
                             <CardFooter>
-                                <p className="text-xs text-gray-400">{new Date(article.created).toLocaleDateString('id-ID')}</p>
+                                <p className="text-xs text-gray-800">{new Date(article.created).toLocaleDateString('id-ID')}</p>
                             </CardFooter>
                         </Card>
                     ))}

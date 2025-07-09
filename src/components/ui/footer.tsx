@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import {
   FaInstagram,
@@ -27,21 +28,50 @@ const Footer = () => {
                 <div className="text-center">
                     <h4 className="text-xl font-semibold mb-4">Ikuti Kami</h4>
                     <div className="flex justify-center space-x-5 text-2xl">
-                        <a href="https://www.instagram.com/busharapanjaya.official/" target="_blank" rel="noreferrer"
-                            className="hover:text-pink-500">
-                            <FaInstagram /></a>
-                        <a href="https://www.tiktok.com/@ptharapanjayaprima?lang=id-ID" target="_blank" rel="noreferrer" className="hover:text-gray-300">
-                            <FaTiktok /></a>
-                        <a href="https://web.facebook.com/Ptharapanjayaprima/?_rdc=1&_rdr#" target="_blank" rel="noreferrer" className="hover:text-blue-600">
-                            <FaFacebook /></a>
-                        <a href="https://www.youtube.com/@BusHarapanJayaOfficial" target="_blank" rel="noreferrer" className="hover:text-red-600">
-                            <FaYoutube /></a>
+                        <Link
+                            href="https://www.instagram.com/busharapanjaya.official/"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="hover:text-pink-500"
+                            aria-label="Instagram Harapan Jaya"
+                        >
+                            <FaInstagram />
+                        </Link>
+
+                        <Link
+                            href="https://www.tiktok.com/@ptharapanjayaprima?lang=id-ID"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="hover:text-gray-300"
+                            aria-label="TikTok Harapan Jaya"
+                        >
+                            <FaTiktok />
+                        </Link>
+
+                        <Link
+                            href="https://web.facebook.com/Ptharapanjayaprima/?_rdc=1&_rdr#"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="hover:text-blue-600"
+                            aria-label="Facebook Harapan Jaya"
+                        >
+                            <FaFacebook />
+                        </Link>
+
+                        <Link
+                            href="https://www.youtube.com/@BusHarapanJayaOfficial"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="hover:text-red-600"
+                            aria-label="YouTube Harapan Jaya"
+                        >
+                            <FaYoutube />
+                        </Link>
                     </div>
                 </div>
 
-                {/* Hak Cipta */}
-                <div className="text-right text-sm text-gray-400 md:text-right">
-                    <p>© {year} PT. Harapan Jaya Prima  .</p>
+                <div className="text-center md:text-right text-sm text-gray-600">
+                    <p>© {year} PT. Harapan Jaya Prima.</p>
                     <p>All rights reserved.</p>
                 </div>
             </div>
