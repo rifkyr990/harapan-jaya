@@ -50,14 +50,14 @@ const Blog = () => {
                     {articles.map((article) => (
                         <Card
                             key={article.objectId}
-                            className="w-full max-w-full transition-shadow duration-300 hover:shadow-lg cursor-pointer"
+                            className="w-full max-w-full transition-shadow duration-300 hover:shadow-lg cursor-pointer pt-0"
                             >
                             <CardHeader className="p-0">
                                 <Image
                                     src={article.thumbnail}
                                     alt={article.title}
-                                    width={450}
-                                    height={300}
+                                    width={550}
+                                    height={550}
                                     className="rounded-t-md object-cover h-56 w-full"
                                 />
                             </CardHeader>
