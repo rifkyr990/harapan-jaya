@@ -108,7 +108,6 @@ const Dashboard = () => {
                 <main className="flex-1 p-4 sm:p-6">
                     {/* Header */}
                     <Header/>
-
                     {/* Form Section */}
                     <section className="bg-white p-4 sm:p-6 rounded-lg shadow mb-8">
                         <h3 className="text-lg font-semibold text-gray-800 mb-4">Tambah Artikel</h3>
