@@ -124,3 +124,13 @@
 * {
   font-family: "Poppins", sans-serif;
 }
+.swiper-button-next,
+.swiper-button-prev {
+  display: none;
+}
+
+/* Atur jarak pagination bullet */
+.custom-swiper .swiper-pagination {
+  margin-top: 5rem;
+  display: none; /* atau 1.5rem sesuai selera */
+}
